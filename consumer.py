@@ -6,7 +6,7 @@ env_settings = EnvironmentSettings.in_streaming_mode()
 t_env = TableEnvironment.create(env_settings)
 
 # Specify connector and format jars
-jars_path = "/Users/vrams/Master/81-Github/DataEngineering/youtube_comments_using_kafka_flink/jar_files/"
+jars_path = "/Users/vrams/Master/81-Github/DataEngineering/00-master/DEG16-Processing-YouTube-Comments/jar_files/"
 jar_files = [
     "file:///" + jars_path + "flink-connector-kafka-1.17.1.jar", 
     "file:///" + jars_path + "flink-sql-connector-kafka-1.17.1.jar",
@@ -57,7 +57,7 @@ sink_ddl = """
         public BOOLEAN
     ) WITH (        
         'connector' = 'mongodb',
-        'uri' = 'mongodb://vrams:vinu2003@localhost:27018/',
+        'uri' = 'mongodb://vrams:vinu2003@localhost:27017/admin',
         'database' = 'my_db',
         'collection' = 'youtube_comments'
     )
